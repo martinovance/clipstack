@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import { Typography, Box, Stack } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
+import millify from 'millify'
 
 import { Videos, Loader } from './'
 import { fetchFromAPI } from '../utils/fetchFromApi'
@@ -35,17 +36,17 @@ const VideoDetail = () => {
             </Typography>
             <Stack direction='row' justifyContent='space-between' sx={{ color: '#fff' }} py={1} px={2}>
               <Link to={`/channel/${channelId}`}>
-                <Typography variant={{ sm: 'subtile1', md: 'h6' }} color='#fff' >
+                <Typography variant={{ sm: 'subtitle1', md: 'h6' }} color='#fff' >
                   {channelTitle}
                   <CheckCircle sx={{ fontSize: '12px', color: 'gray', ml: '5px' }} />
                 </Typography>
               </Link>
               <Stack direction='row' gap='20px' alignItems='center'>
                 <Typography variant='body1' sx={{ opacity: 0.7 }}>
-                  {parseInt(viewCount).toLocaleString()} views
+                  {millify(viewCount)} views
                 </Typography>
                 <Typography variant='body1' sx={{ opacity: 0.7 }}>
-                  {parseInt(likeCount).toLocaleString()} views
+                  {millify(likeCount)} likes  
                 </Typography>
               </Stack>
             </Stack>
