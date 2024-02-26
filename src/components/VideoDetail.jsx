@@ -53,8 +53,8 @@ const VideoDetail = () => {
           </Box>
         </Box>
 
-        <Box px={2} py={{ xs: 5, md: 1 }} justifyContent='center' alignItems='center'>
-          <Videos videos={videos} direction='column' />
+        <Box px={2} py={{ xs: 5, md: 1 }} >
+          <Videos videos={videos}  direction={{ xs: 'row', md: 'column' }} width={{ md: '314px' }} />
         </Box>
       </Stack>
     </Box>
